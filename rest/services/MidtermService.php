@@ -19,14 +19,15 @@ class MidtermService {
     * Implement service method to validate email format and check if email exists
     */
     public function investor_email($email){
+        return $this->dao->investor_email($email);
 
     }
 
     /** TODO
     * Implement service method to return list of investors according to instruction in MidtermRoutes.php
     */
-    public function investors(){
-        return $this->dao->investors();
+    public function investors($share_class_id){
+        return $this->dao->investors($share_class_id);
 
     }
 }

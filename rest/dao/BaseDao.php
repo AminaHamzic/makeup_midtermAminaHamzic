@@ -2,7 +2,7 @@
 
 class BaseDao {
 
-    private $conn;
+    public $conn;
 
     /**
     * constructor of dao class
