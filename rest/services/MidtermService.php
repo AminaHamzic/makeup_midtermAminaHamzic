@@ -11,7 +11,8 @@ class MidtermService {
     /** TODO
     * Implement service method to add new investor to investor table and cap-table
     */
-    public function investor(){
+    public function investor($first_name, $last_name, $email, $company, $share_class_id, $share_class_category_id, $diluted_shares){
+        return $this->dao->investor($first_name, $last_name, $email, $company, $share_class_id, $share_class_category_id, $diluted_shares);
 
     }
 

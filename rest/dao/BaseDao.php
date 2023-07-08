@@ -14,26 +14,26 @@ class BaseDao {
         * List parameters such as servername, username, password, schema. Make sure to use appropriate port
         */
         
-        $host = 'db-mysql-nyc1-13993-do-user-3246313-0.b.db.ondigitalocean.com';
-        $username = 'doadmin';
-        $password = 'AVNS_z6PG_c6BSn-5dB0CG5S';
-        $port = '25060';
+        $host = '127.0.0.1';
+        $username = 'root';
+        $password = '';
+        $port = '3306';
         $schema = 'final-midterm2-2023';
 
 
-        /*options array neccessary to enable ssl mode - do not change*/
+        /*options array neccessary to enable ssl mode - do not change
         $options = array(
         	PDO::MYSQL_ATTR_SSL_CA => 'https://drive.google.com/file/d/1zqyqk92mI4A4cAW43nhnCWxEveGSkY7k/view?usp=sharing',
         	PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
 
-        );
+        );*/
 
         /** TODO
         * Create new connection
         * Use $options array as last parameter to new PDO call after the password
         */
 
-        $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password, $options);
+        $this->conn = new PDO("mysql:host=$host;port=$port;dbname=$schema", $username, $password);
 
         
         // set the PDO error mode to exception

@@ -10,8 +10,7 @@ Flight::route('GET /midterm/connection-check', function(){
     Flight::midtermService();
 });
 
-Flight::route('POST /midterm/investor', function(){
-    /** TODO
+/** TODO
     * This endpoint is used to add new record to investors and cap-table database tables.
     * Investor contains: first_name, last_name, email and company
     * Cap table fields are share_class_id, share_class_category_id, investor_id and diluted_shares
@@ -25,7 +24,19 @@ Flight::route('POST /midterm/investor', function(){
     * This endpoint should return output in JSON format
     * Sample output is given in figure 2 (message should be updated according to the result)
     */
-});
+    Flight::route('POST /midterm/investor', function(){
+        $data = Flight::request()->data->getData();
+
+        Flight::json(Flight::midtermService()->investor(
+            $data['first_name'], 
+            $data['last_name'], 
+            $data['email'], 
+            $data['company'], 
+            $data['share_class_id'], 
+            $data['share_class_category_id'], 
+            $data['diluted_shares']
+        ));
+    });
 
 
 Flight::route('GET /midterm/investor_email/@email', function($email){
